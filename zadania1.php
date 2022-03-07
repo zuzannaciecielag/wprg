@@ -15,7 +15,7 @@ if ($a>$c) {
     $a = $temp;
     echo '<br />';
 }
-if ($b > $c) {
+if ($b>$c) {
     $temp = $c;
     $c = $b;
     $b = $temp;
