@@ -1,6 +1,6 @@
 <?php
 
-echo "Zadanie ";
+echo "Zadanie 1";
 echo "<br />";
 
 $array = [];
@@ -80,5 +80,50 @@ function forEachMax(&$array) {
 
     return $max;
 }
+
+echo "<br />";
+echo "<br />";
+echo "Zadanie 2";
+echo "<br />";
+
+function dice($numberOfThrows) {
+    $scores = [];
+    for ($i = 0; $i < $numberOfThrows; $i++) {
+        $scores[$i] = rand(1, 6);
+    }
+    foreach($scores as $element) {
+        echo $element;
+        echo "<br />";
+    }
+}
+
+dice(6);
+
+echo "<br />";
+echo "<br />";
+echo "Zadanie 3";
+echo "<br />";
+
+function multiplicationTable($sideParameter) {
+    for($i = 1; $i <= $sideParameter; $i++) {
+        for($j = 1; $j <= $sideParameter; $j++) {
+            echo $j;
+            if ($j == $sideParameter) {
+                $i++;
+                echo "<br />";
+                for ($a = 1; $a <= $sideParameter; $a++) {
+                    echo $a * 2;
+                    if ($a == $sideParameter) {
+                        $i++;
+                        echo "<br />";
+                        $a = $i;
+                    }
+                }
+            }
+        }
+    }
+}
+
+multiplicationTable(4);
 
 
