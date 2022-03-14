@@ -51,8 +51,6 @@ echo "<br />";
 echo "Zadanie 4";
 echo "<br />";
 
-//032[80 jesli 1800-1899, 0 jesli 1900-1999, 20 jesli po 2000] 218 0872 9
-
 function peselBirthDate($pesel) {
     $arr = str_split($pesel);
     $birthDate = "";
@@ -90,22 +88,22 @@ echo "<br />";
 
 function areaCalculator($figure, $par1, $par2, $par3){
     switch ($figure) {
-        case "triangle": triangleArea($par1, $par2); break;
-        case "rectangle": rectangleArea($par1, $par2); break;
-        case "trapezoid": trapezoidArea($par1, $par2, $par3); break;
+        case "triangle": echo triangleArea($par1, $par2); break;
+        case "rectangle": echo rectangleArea($par1, $par2); break;
+        case "trapezoid": echo trapezoidArea($par1, $par2, $par3); break;
     }
 }
 
 function triangleArea($height, $base) {
-    echo (1/2) * $height * $base;
+    return (1/2) * $height * $base;
 }
 
 function rectangleArea($width, $height) {
-    echo $width * $height;
+    return $width * $height;
 }
 
 function trapezoidArea($longBase, $shortBase, $height) {
-    echo (1/2) * ($longBase + $shortBase) * $height;
+    return (1/2) * ($longBase + $shortBase) * $height;
 }
 
 areaCalculator("trapezoid", 1, 2, 3);
