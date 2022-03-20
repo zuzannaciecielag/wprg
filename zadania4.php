@@ -105,16 +105,12 @@ echo "Zadanie 3";
 echo "<br />";
 
 function multiplicationTable($sideParameter) {
-    //$i = numbers in first row horizontally
     for ($i = 1; $i <= $sideParameter; $i++) {
         echo $i;
     }
     echo "<br />";
-    //$i - counter for numbers on first row horizontally
     $i = 2;
-    //$j = numbers in vertical side row
     for ($j = 2; $j <= $sideParameter; $j++) {
-        //ONE HORIZONTAL ROW GETS CREATED HERE \/\/\/
         multiplicationTableRow($j, $i, $sideParameter);
         echo "<br />";
 
@@ -131,5 +127,42 @@ function multiplicationTableRow($parameter, $secondParameter, $sideParameter) {
 }
 
 multiplicationTable(4);
+
+echo "<br />";
+echo "<br />";
+echo "Zadanie 4";
+echo "<br />";
+
+function primeNumber($number) {
+    $count = 0;
+    if ($number <= 40) {
+        for($i = 1; $i <= 6; $i++) {
+            $count++;
+            if ($number == (6*$i)+1) {
+                echo $count;
+                echo "<br />";
+                echo "Prime number.";
+                return true;
+            }
+        }
+    } else {
+        for ($i = 0; $i <= 39; $i++) {
+            $count++;
+            if ($number == ($i ** 2) + $i + 41) {
+                echo $count;
+                echo "<br />";
+                echo "Prime number.";
+                return true;
+            }
+        }
+    }
+    $count++;
+    echo $count;
+    echo "<br />";
+    echo "Not a prime number";
+    return false;
+}
+
+echo primeNumber(156667);
 
 
