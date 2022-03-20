@@ -105,22 +105,28 @@ echo "Zadanie 3";
 echo "<br />";
 
 function multiplicationTable($sideParameter) {
-    for($i = 1; $i <= $sideParameter; $i++) {
-        for($j = 1; $j <= $sideParameter; $j++) {
-            echo $j;
-            if ($j == $sideParameter) {
-                $i++;
-                echo "<br />";
-                for ($a = 1; $a <= $sideParameter; $a++) {
-                    echo $a * 2;
-                    if ($a == $sideParameter) {
-                        $i++;
-                        echo "<br />";
-                        $a = $i;
-                    }
-                }
-            }
+    //$i = numbers in first row horizontally
+    for ($i = 1; $i <= $sideParameter; $i++) {
+        echo $i;
+    }
+    echo "<br />";
+    //$i - counter for numbers on first row horizontally
+    $i = 2;
+    //$j = numbers in vertical side row
+    for ($j = 2; $j <= $sideParameter; $j++) {
+        //ONE HORIZONTAL ROW GETS CREATED HERE \/\/\/
+        multiplicationTableRow($j, $i, $sideParameter);
+        echo "<br />";
+
+    }
+}
+
+function multiplicationTableRow($parameter, $secondParameter, $sideParameter) {
+    for($i = $secondParameter; $i <= $sideParameter; $i++) {
+        if ($i == $secondParameter) {
+            echo $parameter;
         }
+        echo $parameter * $i;
     }
 }
 
