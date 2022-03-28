@@ -135,32 +135,37 @@ echo "<br />";
 
 function primeNumber($number) {
     $count = 0;
-    if ($number <= 40) {
-        for($i = 1; $i <= 6; $i++) {
-            $count++;
-            if ($number == (6*$i)+1) {
-                echo $count;
-                echo "<br />";
-                echo "Prime number.";
-                return true;
-            }
-        }
-    } else {
-        for ($i = 0; $i <= 39; $i++) {
-            $count++;
-            if ($number == ($i ** 2) + $i + 41) {
-                echo $count;
-                echo "<br />";
-                echo "Prime number.";
-                return true;
-            }
+    if ($number == 0) {
+        $count++;
+        echo "Liczba razy wykonania pętli: " . $count;
+        echo "<br />";
+        return "0 nie jest ani pierwsze, ani złożone.";
+    }
+    if ($number == 1 || $number == 2 || $number == 3) {
+        $count++;
+        echo "Liczba razy wykonania pętli: " . $count;
+        echo "<br />";
+        return "Liczba pierwsza.";
+    }
+    if ($number % 2 == 0) {
+        $count++;
+        echo "Liczba razy wykonania pętli: " . $count;
+        echo "<br />";
+        return "Liczba złożona.";
+    }
+    for ($i = 2; $i <= 9; $i++) {
+        $count++;
+        if ($number % $i == 0) {
+            echo "Liczba razy wykonania pętli: " . $count;
+            echo "<br />";
+            return "Liczba złożona.";
         }
     }
     $count++;
-    echo $count;
+    echo "Liczba razy wykonania pętli:" . $count;
     echo "<br />";
-    echo "Not a prime number";
-    return false;
+    echo "Liczba pierwsza.";
+    return "";
 }
 
 echo primeNumber(156667);
