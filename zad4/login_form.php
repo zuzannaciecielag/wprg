@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <BODY>
 <FORM action="login_form.php" method="GET">
     <TABLE>
@@ -18,20 +21,16 @@
 <?php
 $login = "log";
 $haslo = "123";
+
 if(isset($_GET['zaloguj'])) {
-    if (isset($_GET['login']) && isset($_GET['haslo']) && !empty($_GET['login'] && !empty($_GET['haslo']))) {
-        if ($_GET['login'] == $login) {
-            if ($_GET['haslo'] == $haslo) {
-                header("Location:logged_in.php?log=true");
-                exit();
-            } else {
-                header("Location:logged_in.php?log=false");
-                exit();
+    if (isset($_GET['login']) && isset($_GET['haslo'])) {
+        if ($_GET['login'] === $login) {
+            if ($_GET['haslo'] === $haslo) {
+                $_SESSION["logged"] = true;
             }
-        } else {
-            header("Location:logged_in.php?log=false");
-            exit();
         }
+        header("Location:logged_in.php");
+        exit();
     }
 }
 ?>

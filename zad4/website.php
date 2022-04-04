@@ -16,18 +16,22 @@ $podstrony[2] = ['nazwa'=>'Kontakt', 'link'=>'kontakt', 'tresc'=>'email@domain.c
             }
             ?>
         </ul>
-
     </TABLE>
 </FORM>
 <?php
+$check = false;
 if (isset($_GET['menu'])) {
     foreach($podstrony as $key => $value) {
         if ($_GET['menu'] == $value["link"]) {
+            $check = true;
             echo "<b><em>" . $value["nazwa"] . "</em></b>" . "</br>" .$value["tresc"];
         }
     }
+    if (!$check) {
+        echo "Nie ma takiej podstrony.";
+    }
 } else {
-    echo "";
+    echo "<b><em>" . $podstrony[0]["nazwa"] . "</em></b>" . "</br>" .$podstrony[0]["tresc"];
 }
 ?>
 </BODY>
